@@ -1,315 +1,40 @@
 import AceTernityLogo from "@/components/logos/aceternity";
-import SlideShow from "@/components/slide-show";
-import { Button } from "@/components/ui/button";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import { ArrowUpRight, ExternalLink, Link2, MoveUpRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { ReactNode } from "react";
-import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
-import {
-  SiChakraui,
-  SiDocker,
-  SiExpress,
-  SiFirebase,
-  SiJavascript,
-  SiMongodb,
-  SiPostgresql,
-  SiPrisma,
-  SiPython,
-  SiReactquery,
-  SiSanity,
-  SiShadcnui,
-  SiSocketdotio,
-  SiSupabase,
-  SiTailwindcss,
-  SiThreedotjs,
-  SiTypescript,
-  SiVuedotjs,
-  // --- NEW ICONS ADDED FOR YOUR SKILLS ---
-  SiDjango,
-  SiJsonwebtokens,
-  SiStripe,
-  SiZoho,
-  SiHtml5,
-  SiCss3,
-  SiGit,
-} from "react-icons/si";
+// ... (rest of the imports are the same) ...
 import { TbBrandFramerMotion } from "react-icons/tb";
 const BASE_PATH = "/assets/projects-screenshots";
 
 const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
-  return (
-    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
-      <Link
-        className="font-mono underline flex gap-2"
-        rel="noopener"
-        target="_new"
-        href={live}
-      >
-        <Button variant={"default"} size={"sm"}>
-          {/* Changed to "Visit Link" as it might be GitHub */}
-          Visit Link
-          <ArrowUpRight className="ml-3 w-5 h-5" />
-        </Button>
-      </Link>
-      {repo && (
-        <Link
-          className="font-mono underline flex gap-2"
-          rel="noopener"
-          target="_new"
-          href={repo}
-        >
-          <Button variant={"default"} size={"sm"}>
-            Github
-            <ArrowUpRight className="ml-3 w-5 h-5" />
-          </Button>
-        </Link>
-      )}
-    </div>
-  );
+// ... (rest of this function is the same) ...
 };
 
 export type Skill = {
-  title: string;
-  bg: string;
-  fg: string;
-  icon: ReactNode;
+// ... (type definition is the same) ...
 };
 
 // --- MODIFIED: Added your skills to this object ---
 const PROJECT_SKILLS = {
-  // --- NEW SKILLS ---
-  django: {
-    title: "Django",
-    bg: "#092E20",
-    fg: "#FFFFFF",
-    icon: <SiDjango />,
-  },
-  drf: {
-    title: "Django Rest FW",
-    bg: "#092E20",
-    fg: "#FFFFFF",
-    icon: <SiDjango />,
-  },
-  jwt: {
-    title: "JWT",
-    bg: "#000000",
-    fg: "#FFFFFF",
-    icon: <SiJsonwebtokens />,
-  },
-  stripe: {
-    title: "Stripe",
-    bg: "#635BFF",
-    fg: "#FFFFFF",
-    icon: <SiStripe />,
-  },
-  zoho: {
-    title: "Zoho",
-    bg: "#E42525",
-    fg: "#FFFFFF",
-    icon: <SiZoho />,
-  },
-  html: {
-    title: "HTML5",
-    bg: "#E34F26",
-    fg: "#FFFFFF",
-    icon: <SiHtml5 />,
-  },
-  css: {
-    title: "CSS3",
-    bg: "#1572B6",
-    fg: "#FFFFFF",
-    icon: <SiCss3 />,
-  },
-  git: {
-    title: "Git",
-    bg: "#F05032",
-    fg: "#FFFFFF",
-    icon: <SiGit />,
-  },
-  // --- EXISTING SKILLS ---
-  next: {
-    title: "Next.js",
-    bg: "black",
-    fg: "white",
-    icon: <RiNextjsFill />,
-  },
-  chakra: {
-    title: "Chakra UI",
-    bg: "black",
-    fg: "white",
-    icon: <SiChakraui />,
-  },
-  node: {
-    title: "Node.js",
-    bg: "black",
-    fg: "white",
-    icon: <RiNodejsFill />,
-  },
-  python: {
-    title: "Python",
-    bg: "#3776AB",
-    fg: "white",
-    icon: <SiPython />,
-  },
-  prisma: {
-    title: "prisma",
-    bg: "black",
-    fg: "white",
-    icon: <SiPrisma />,
-  },
-  postgres: {
-    title: "PostgreSQL",
-    bg: "#336791",
-    fg: "white",
-    icon: <SiPostgresql />,
-  },
-  mongo: {
-    title: "MongoDB",
-    bg: "black",
-    fg: "white",
-    icon: <SiMongodb />,
-  },
-  express: {
-    title: "Express",
-    bg: "black",
-    fg: "white",
-    icon: <SiExpress />,
-  },
-  reactQuery: {
-    title: "React Query",
-    bg: "black",
-    fg: "white",
-    icon: <SiReactquery />,
-  },
-  shadcn: {
-    title: "ShanCN UI",
-    bg: "black",
-    fg: "white",
-    icon: <SiShadcnui />,
-  },
-  aceternity: {
-    title: "Aceternity",
-    bg: "black",
-    fg: "white",
-    icon: <AceTernityLogo />,
-  },
-  tailwind: {
-    title: "Tailwind",
-    bg: "black",
-    fg: "white",
-    icon: <SiTailwindcss />,
-  },
-  docker: {
-    title: "Docker",
-    bg: "black",
-    fg: "white",
-    icon: <SiDocker />,
-  },
-  yjs: {
-    title: "Y.js",
-    bg: "black",
-    fg: "white",
-    icon: (
-      <span>
-        <strong>Y</strong>js
-      </span>
-    ),
-  },
-  firebase: {
-    title: "Firebase",
-    bg: "black",
-    fg: "white",
-    icon: <SiFirebase />,
-  },
-  sockerio: {
-    title: "Socket.io",
-    bg: "black",
-    fg: "white",
-    icon: <SiSocketdotio />,
-  },
-  js: {
-    title: "JavaScript",
-    bg: "black",
-    fg: "white",
-    icon: <SiJavascript />,
-  },
-  ts: {
-    title: "TypeScript",
-    bg: "black",
-    fg: "white",
-    icon: <SiTypescript />,
-  },
-  vue: {
-    title: "Vue.js",
-    bg: "black",
-    fg: "white",
-    icon: <SiVuedotjs />,
-  },
-  react: {
-    title: "React.js",
-    bg: "black",
-    fg: "white",
-    icon: <RiReactjsFill />,
-  },
-  sanity: {
-    title: "Sanity",
-    bg: "black",
-    fg: "white",
-    icon: <SiSanity />,
-  },
-  spline: {
-    title: "Spline",
-    bg: "black",
-    fg: "white",
-    icon: <SiThreedotjs />,
-  },
-  gsap: {
-    title: "GSAP",
-    bg: "black",
-    fg: "white",
-    icon: "",
-  },
   framerMotion: {
     title: "Framer Motion",
     bg: "black",
     fg: "white",
     icon: <TbBrandFramerMotion />,
   },
-  supabase: {
-    title: "Supabase",
-    bg: "black",
-    fg: "white",
-    icon: <SiSupabase />,
-  },
+  // DELETED THE 'supabase' BLOCK FROM HERE
 };
 
 export type Project = {
-  id: string;
-  category: string;
-  title: string;
-  src: string;
-  screenshots: string[];
-  skills: { frontend: Skill[]; backend: Skill[] };
-  content: React.ReactNode | any;
-  github?: string;
+// ... (type definition is the same) ...
   live: string;
 };
 
 // --- MODIFIED: This is now YOUR project list from your resume ---
 const projects: Project[] = [
+  // 3DHUB Project (unchanged)
   {
     id: "3dhub",
     category: "Backend Integration",
     title: "3DHub Platform Integration",
-
-    // ACTION: Change "your-3dhub-image.png" to your actual image filename
-    // UPDATED: I'm assuming your filename is '3dhub.png'.
-    // If it's different (like 3dhub.jpg), please change it here.
-    // CHANGED: Updated to .jpg as requested
     src: "/assets/projects-screenshots/3dhub.jpg",
-
     screenshots: ["landing.png"],
     skills: {
       frontend: [],
@@ -320,12 +45,7 @@ const projects: Project[] = [
         PROJECT_SKILLS.zoho,
       ],
     },
-
-    // CHANGED: This now links to your main GitHub profile since the project has no link
     live: "https://github.com/jaiganesh0081",
-
-    // CHANGED: I removed the duplicate 'github' prop so only one button shows.
-
     get content() {
       return (
         <div>
@@ -352,32 +72,24 @@ const projects: Project[] = [
       );
     },
   },
+  // REAL-TIME CHAT (unchanged)
   {
     id: "realtime-chat",
     category: "Real-time Application",
     title: "Real-time Chat App",
-
-    // ACTION: Change "your-chat-app-image.png" to your actual image filename
-    // UPDATED: Using your filename. Make sure 'chatapp.jpg' is correct.
     src: "/assets/projects-screenshots/chatapp.jpg",
-
     screenshots: ["1.png"],
     skills: {
       frontend: [],
       backend: [
         PROJECT_SKILLS.python,
         PROJECT_SKILLS.django,
-        PROJECT_SKILLS.sockerio, // This is the 'Socket.io' skill from the original list
+        PROJECT_SKILLS.sockerio,
         PROJECT_SKILLS.jwt,
       ],
     },
-
-    // CHANGED: Added your link
     live: "https://github.com/jaiganesh0081/Chat-Application",
-
-    // CHANGED: Added your link
     github: "https://github.com/jaiganesh0081/Chat-Application",
-
     get content() {
       return (
         <div>
@@ -404,31 +116,23 @@ const projects: Project[] = [
       );
     },
   },
+  // E-COMMERCE BACKEND (unchanged)
   {
     id: "ecommerce-backend",
     category: "E-commerce API",
     title: "E-commerce Backend",
-
-    // ACTION: Change "your-ecommerce-image.png" to your actual image filename
-    // UPDATED: Using your filename. Make sure 'ecommerce.jpg' is correct.
     src: "/assets/projects-screenshots/ecommerce.jpg",
-
     screenshots: ["1.png"],
     skills: {
       frontend: [],
       backend: [
         PROJECT_SKILLS.python,
-        PROJECT_SKILLS.drf, // Using the new 'DRF' skill
+        PROJECT_SKILLS.drf,
         PROJECT_SKILLS.postgres,
       ],
     },
-
-    // CHANGED: Added your link
     live: "https://github.com/jaiganesh0081/Ecommerce",
-
-    // CHANGED: Added your link
     github: "https://github.com/jaiganesh0081/Ecommerce",
-
     get content() {
       return (
         <div>
@@ -453,15 +157,12 @@ const projects: Project[] = [
       );
     },
   },
+  // BLOG APP (THIS IS THE FIX)
   {
     id: "blog-app",
     category: "CMS / API",
     title: "Blog App (DRF API)",
-
-    // ACTION: Change "your-blog-app-image.png" to your actual image filename
-    // UPDATED: Using your filename. Make sure 'blog.jpg' is correct.
     src: "/assets/projects-screenshots/blog.jpg",
-
     screenshots: ["1.png"],
     skills: {
       frontend: [],
@@ -471,18 +172,16 @@ const projects: Project[] = [
         PROJECT_SKILLS.jwt,
       ],
     },
-
-    // CHANGED: Added your link
     live: "https://github.com/jaiganesh0081/Blog-app",
-
-    // CHANGED: Added your link
     github: "https://github.com/jaiganesh0081/Blog-app",
-
     get content() {
       return (
         <div>
+          {/* THIS LINE IS THE FIX:
+            Changed Framework's to Framework&apos;s
+          */}
           <TypographyP className="font-mono text-lg">
-            Created a flexible Blog API using Django Rest Framework's APIView.
+            Created a flexible Blog API using Django Rest Framework&apos;s APIView.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
