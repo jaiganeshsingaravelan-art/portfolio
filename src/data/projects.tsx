@@ -179,7 +179,7 @@ const projects: Project[] = [
         <div>
           {/* THIS LINE IS THE FIX:
             Changed Framework's to Framework&apos;s
-          */}git add .
+          */}
           <TypographyP className="font-mono text-lg">
             Created a flexible Blog API using Django Rest Framework&apos;s APIView.
           </TypographyP>
